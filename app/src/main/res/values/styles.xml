@@ -6,7 +6,7 @@
         </item>
     </style>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="AppBaseTheme">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">
             @color/white
@@ -34,6 +34,22 @@
         </item>
         <item name="android:activityCloseExitAnimation">
             @anim/slide_out_right
+        </item>
+    </style>
+
+    <!--启动页风格-->
+    <style name="Splash" parent="AppBaseTheme">
+        <item name="android:colorPrimary">
+            @color/black
+        </item>
+        <item name="android:colorPrimaryDark">
+            @color/black
+        </item>
+        <item name="android:colorAccent">
+            @color/black
+        </item>
+        <item name="android:windowBackground">
+            @color/black
         </item>
     </style>
 </resources>

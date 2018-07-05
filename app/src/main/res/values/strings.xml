@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">KotlinDemo</string>
+    <string name="contentDescription">contentDescription</string>
+    <string name="Eyepetizer">Eyepetizer</string>
+    <string name="openEyes">开&#160;&#160;&#160;眼</string>
+    <string name="intro_text">Daily appetizers for your eyes，Bon eyepetit</string>
+    <string name="intro_info">每日精选视频推介，让你大开眼界。</string>
 </resources>
+
