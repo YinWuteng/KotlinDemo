@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/im_icon_splash"
-        android:layout_width="@dimen/dimen_61dp"
-        android:layout_height="@dimen/dimen_41dp"
+        android:layout_width="64dp"
+        android:layout_height="41dp"
         android:layout_centerInParent="true"
         android:background="@drawable/ic_action_focus_white_no_margin"
         android:contentDescription="@string/contentDescription"
@@ -16,21 +16,21 @@
         android:id="@+id/tv_name_english"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_20dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/white"
         android:layout_centerInParent="true"
         android:layout_below="@+id/im_icon_splash"
-        android:textSize="@dimen/dimen_25sp"
+        android:textSize="25sp"
         android:text="@string/Eyepetizer"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:layout_marginTop="@dimen/dimen_20dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@id/tv_name_english"
         android:layout_centerInParent="true"
-        android:textSize="@dimen/dimen_18sp"
+        android:textSize="18sp"
         android:text="@string/openEyes"
         />
     <TextView
@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="@dimen/dimen_16dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/intro_text"
         android:layout_above="@+id/tv_intro"
         />
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:layout_marginBottom="@dimen/dimen_46dp"
+        android:layout_marginBottom="46dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="@string/intro_info"
