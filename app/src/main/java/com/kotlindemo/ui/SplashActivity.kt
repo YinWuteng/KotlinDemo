@@ -28,6 +28,7 @@ class SplashActivity : BaseActivity() {
                 .LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_splash)
+        initView()
         //设置动画
         setAnimation()
     }
@@ -58,7 +59,7 @@ class SplashActivity : BaseActivity() {
         })
     }
 
-    override fun initView() {
+    private fun initView() {
         val font: Typeface = Typeface.createFromAsset(this.assets, "fonts/Lobster-1.4.otf")
         //设置文字字体
         tv_name_english.typeface = font
