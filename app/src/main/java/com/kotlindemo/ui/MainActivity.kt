@@ -64,7 +64,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         var calendar: Calendar = Calendar.getInstance()
         calendar.time = data
         var index: Int = calendar.get(Calendar
-                .DAY_OF_WEEK - 1)
+                .DAY_OF_WEEK )-1
         if (index < 0) {
             index = 0
         }
@@ -191,12 +191,12 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode==KeyEvent.KEYCODE_BACK){
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             finish()
             toast!!.cancel()
-        }else{
-            mExitTime=System.currentTimeMillis()
-            toast=showToast("在按一次退出程序")
+        } else {
+            mExitTime = System.currentTimeMillis()
+            toast = showToast("在按一次退出程序")
         }
         return super.onKeyDown(keyCode, event)
     }

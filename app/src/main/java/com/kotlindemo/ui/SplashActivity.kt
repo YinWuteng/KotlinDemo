@@ -21,8 +21,8 @@ import kotlinx.android.synthetic.main.activity_splash.*
  */
 class SplashActivity : BaseActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         //设置全屏
         window.setFlags(WindowManager
                 .LayoutParams.FLAG_FULLSCREEN,
@@ -32,6 +32,7 @@ class SplashActivity : BaseActivity() {
         //设置动画
         setAnimation()
     }
+
 
     private fun setAnimation() {
         val alphaAnimation = AlphaAnimation(0.1f, 1.0f)
