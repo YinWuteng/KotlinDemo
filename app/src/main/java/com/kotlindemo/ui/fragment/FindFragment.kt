@@ -1,17 +1,45 @@
 package com.kotlindemo.ui.fragment
 
+import android.content.Intent
+import com.kotlindemo.R
+import com.kotlindemo.adapter.FindAdapter
 import com.kotlindemo.base.BaseFragment
+import com.kotlindemo.mvp.contract.FindContract
+import com.kotlindemo.mvp.model.bean.FindBean
+import com.kotlindemo.mvp.presenter.FindPresenter
+import com.kotlindemo.ui.FindDeatialActivity
+import kotlinx.android.synthetic.main.find_fragment.*
 
 /**
  * Create By yinwuteng
  * 2018/7/16.
  */
-class FindFragment:BaseFragment() {
+class FindFragment : BaseFragment(), FindContract.View {
+    var mPresenter: FindPresenter? = null
+    var mAdapter: FindAdapter? = null
+    var mList: MutableList<FindBean>? = null
+
     override fun getLayoutResources(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return R.layout.find_fragment
     }
 
     override fun initView() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        mPresenter = FindPresenter(context, this)
+        mPresenter?.start()
+        mAdapter = FindAdapter(context, mList!!)
+        gv_find.adapter = mAdapter
+        gv_find.setOnItemClickListener { parent, view, position, id ->
+            var bean = mList?.get(position)
+            var name = bean?.name
+            var intent: Intent = Intent(context, FindDeatialActivity::class.java)
+            intent.putExtra("name", name)
+            startActivity(intent)
+        }
+    }
+
+    override fun setData(beans: MutableList<FindBean>) {
+        mAdapter?.mList = beans
+        mList = beans
+        mAdapter?.notifyDataSetChanged()
     }
 }

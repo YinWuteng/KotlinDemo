@@ -66,6 +66,9 @@ class HomeFragment : BaseFragment(), HomeContract.View, SwipeRefreshLayout.OnRef
     }
 
     override fun onRefresh() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+       if (!mIsRefresh){
+           mIsRefresh=true
+           mPresenter?.start()
+       }
     }
 }
