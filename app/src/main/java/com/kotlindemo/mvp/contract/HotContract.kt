@@ -2,7 +2,7 @@ package com.kotlindemo.mvp.contract
 
 import com.kotlindemo.base.BasePresenter
 import com.kotlindemo.base.BaseView
-import com.kotlindemo.mvp.model.bean.HomeBean
+import com.kotlindemo.mvp.model.bean.HotBean
 
 /**
  * Create By yinwuteng
@@ -11,7 +11,7 @@ import com.kotlindemo.mvp.model.bean.HomeBean
 class HotContract {
 
     interface View:BaseView<Presenter>{
-        fun setData(bean: HomeBean)
+        fun setData(bean: HotBean)
     }
     interface Presenter : BasePresenter {
         fun requesData(strategy: String)

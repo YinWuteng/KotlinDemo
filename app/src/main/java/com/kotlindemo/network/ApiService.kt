@@ -2,6 +2,7 @@ package com.kotlindemo.network
 
 import com.kotlindemo.mvp.model.bean.FindBean
 import com.kotlindemo.mvp.model.bean.HomeBean
+import com.kotlindemo.mvp.model.bean.HotBean
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -28,9 +29,15 @@ interface ApiService {
     @GET("v2/feed")
     fun getHomeMoreData(@Query("date") date: String, @Query("num") num: String): Observable<HomeBean>
 
-    //获取发现频道信息
+    /**
+     * 获取发现频道信息
+     */
     @GET("v2/categories?udid=26868b32e808498db32fd51fb422d00175e179df&vc=83")
-    fun getFindData() : Observable<MutableList<FindBean>>
+    fun getFindData(): Observable<MutableList<FindBean>>
 
+    //获取热门排行信息
+    @GET("v3/ranklist")
+    fun getHotData(@Query("num") num :Int,@Query("strategy") strategy :String,
+                   @Query("udid") udid :String,@Query("vc") vc :Int) : Observable<HotBean>
 
 }
