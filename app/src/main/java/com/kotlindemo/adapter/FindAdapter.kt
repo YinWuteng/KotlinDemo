@@ -15,7 +15,7 @@ import com.kotlindemo.utils.ImageLoadUtils
  * Create By yinwuteng
  * 2018/8/6.
  */
-class FindAdapter(context: Context, list: MutableList<FindBean>) : BaseAdapter() {
+class FindAdapter(context: Context, list: MutableList<FindBean>?) : BaseAdapter() {
     var mContext: Context? = null
     var mList: MutableList<FindBean>? = null
     var mInflater: LayoutInflater? = null

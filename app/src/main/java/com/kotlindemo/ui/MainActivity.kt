@@ -53,7 +53,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
 
             } else {
                 searchFragment = SearchFragment()
-//                searchFragment.show(fragmentManager,SEARCH_TAG)
+               //searchFragment.show(fragmentManager,SEARCH_TAG)
             }
         }
     }

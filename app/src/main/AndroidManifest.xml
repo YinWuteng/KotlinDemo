@@ -23,5 +23,8 @@
         </activity>
         <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.VideoDetailActivity" />
+        <activity android:name=".ui.WatchActivity" />
+        <activity android:name=".ui.AdviseActivity" />
+        <activity android:name=".ui.CacheActivity" />
     </application>
 </manifest>

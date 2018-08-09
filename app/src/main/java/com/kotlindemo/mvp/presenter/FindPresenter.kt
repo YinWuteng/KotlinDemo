@@ -14,7 +14,9 @@ import io.reactivex.Observable
 class FindPresenter(context: Context, view: FindContract.View) : FindContract.Preenter {
     var mContext: Context? = null
     var mView: FindContract.View? = null
-    val mModel: FindModel by lazy { FindModel() }
+    val mModel: FindModel by lazy {
+        FindModel()
+    }
 
     init {
         mView = view

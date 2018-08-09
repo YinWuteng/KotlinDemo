@@ -26,7 +26,7 @@ class FindFragment : BaseFragment(), FindContract.View {
     override fun initView() {
         mPresenter = FindPresenter(context, this)
         mPresenter?.start()
-        mAdapter = FindAdapter(context, mList!!)
+        mAdapter = FindAdapter(context, mList)
         gv_find.adapter = mAdapter
         gv_find.setOnItemClickListener { parent, view, position, id ->
             var bean = mList?.get(position)
@@ -37,9 +37,9 @@ class FindFragment : BaseFragment(), FindContract.View {
         }
     }
 
-    override fun setData(beans: MutableList<FindBean>) {
-        mAdapter?.mList = beans
-        mList = beans
+    override fun setData(bean: MutableList<FindBean>) {
+        mAdapter?.mList = bean
+        mList = bean
         mAdapter?.notifyDataSetChanged()
     }
 }
