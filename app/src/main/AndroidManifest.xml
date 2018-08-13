@@ -26,5 +26,6 @@
         <activity android:name=".ui.WatchActivity" />
         <activity android:name=".ui.AdviseActivity" />
         <activity android:name=".ui.CacheActivity" />
+        <activity android:name=".ui.FindDetailActivity" />
     </application>
 </manifest>

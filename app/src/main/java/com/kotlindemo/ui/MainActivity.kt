@@ -135,7 +135,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 iv_search.setImageResource(R.drawable.icon_search)
 
             }
-            R.id.home -> {
+            R.id.rb_home -> {
                 rb_home.isChecked = true
                 rb_home.setTextColor(resources.getColor(R.color.black))
                 supportFragmentManager.beginTransaction().show(this.homeFragment!!)
@@ -167,7 +167,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                         .hide(this.homeFragment!!)
                         .hide(this.hotFragment!!)
                         .commit()
-                tv_bar_title.visibility = View.VISIBLE
+                tv_bar_title.visibility = View.GONE
                 iv_search.setImageResource(R.drawable.icon_search)
             }
         }
