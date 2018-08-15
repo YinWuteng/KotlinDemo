@@ -21,7 +21,7 @@ import java.util.regex.Pattern
 class FindDetailActivity : AppCompatActivity(), FindDetailContract.View, SwipeRefreshLayout.OnRefreshListener {
     lateinit var mPresneter: FindDetailPresenter
     lateinit var mAdapter: RankAdapter
-    lateinit var data: String
+//    lateinit var data: String
     var mIsRefresh: Boolean = false
     var mList: ArrayList<HotBean.ItemListBean.DataBean> = ArrayList()
     var mStart: Int = 10
@@ -35,35 +35,35 @@ class FindDetailActivity : AppCompatActivity(), FindDetailContract.View, SwipeRe
         refreshLayout.setOnRefreshListener(this)
         mPresneter = FindDetailPresenter(this, this)
         mPresneter.requestData(name, "date")
-        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
-            override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-                var layoutManger:LinearLayoutManager=recyclerView?.layoutManager as LinearLayoutManager
-                var lastPosition=layoutManger.findLastVisibleItemPosition()
-                if (newState==RecyclerView.SCROLL_STATE_IDLE && lastPosition==mList.size-1){
-                    if (data!=null){
-                        mPresneter?.requestMoreData(mStart,name,"date")
-                        mStart=mStart.plus(10)
-                    }
-                }
-            }
-        })
+//        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+//            override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
+//                super.onScrollStateChanged(recyclerView, newState)
+//                var layoutManger:LinearLayoutManager=recyclerView?.layoutManager as LinearLayoutManager
+//                var lastPosition=layoutManger.findLastVisibleItemPosition()
+//                if (newState==RecyclerView.SCROLL_STATE_IDLE && lastPosition==mList.size-1){
+//                    if (data!=null){
+//                        mPresneter?.requestMoreData(mStart,name,"date")
+//                        mStart=mStart.plus(10)
+//                    }
+//                }
+//            }
+//        })
     }
 
     override fun setData(bean: HotBean) {
-        val regEx = "[^0-9]"
-        val p = Pattern.compile(regEx)
-        val m = p.matcher(bean.nextPageUrl as CharSequence?)
-        data = m.replaceAll("").subSequence(1, m.replaceAll("").length - 1).toString()
-        if (mIsRefresh) {
-            mIsRefresh = false
-            refreshLayout.isRefreshing = false
-            if (mList.size > 0) {
-                mList.clear()
-            }
-        }
-        bean.itemList?.forEach { it.data?.let { it1 -> mList.add(it1) } }
-        mAdapter.notifyDataSetChanged()
+//        val regEx = "[^0-9]"
+//        val p = Pattern.compile(regEx)
+//        val m = p.matcher(bean.nextPageUrl as CharSequence?)
+//        data = m.replaceAll("").subSequence(1, m.replaceAll("").length - 1).toString()
+//        if (mIsRefresh) {
+//            mIsRefresh = false
+//            refreshLayout.isRefreshing = false
+//            if (mList.size > 0) {
+//                mList.clear()
+//            }
+//        }
+//        bean.itemList?.forEach { it.data?.let { it1 -> mList.add(it1) } }
+//        mAdapter.notifyDataSetChanged()
     }
 
     lateinit var name: String
