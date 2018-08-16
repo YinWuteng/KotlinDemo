@@ -97,7 +97,7 @@ class VideoDetailActivity : AppCompatActivity() {
                 if (count != -1) {
                     count = count.inc()
                 } else {
-                    count = -1
+                    count = 1
                 }
                 SPUtils.getInstance(this, "downloads").put("count", count)
                 ObjectSaveUtils.saveObject(this, "download$count", bean)
@@ -132,7 +132,7 @@ class VideoDetailActivity : AppCompatActivity() {
         //增加封面
         imageView = ImageView(this)
         imageView.scaleType = ImageView.ScaleType.CENTER_CROP
-        ImageViewAsynvTask(mHandler, this, imageView).execute(bean.feed)
+        ImageViewAsyncTask(mHandler, this, imageView).execute(bean.feed)
         gsy_player.titleTextView.visibility = View.GONE
         gsy_player.backButton.visibility = View.VISIBLE
         orientationUtils = OrientationUtils(this, gsy_player)
@@ -174,7 +174,7 @@ class VideoDetailActivity : AppCompatActivity() {
 
     }
 
-    private class ImageViewAsynvTask(handler: Handler, activity: VideoDetailActivity, private val mImageView: ImageView) :
+    private class ImageViewAsyncTask(handler: Handler, activity: VideoDetailActivity, private val mImageView: ImageView) :
             AsyncTask<String, Void, String>() {
         private var hanlder = handler
         private var mPath: String? = null
