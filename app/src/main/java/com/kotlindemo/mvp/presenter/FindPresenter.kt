@@ -1,5 +1,6 @@
 package com.kotlindemo.mvp.presenter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import com.kotlindemo.mvp.contract.FindContract
 import com.kotlindemo.mvp.model.FindModel
@@ -14,7 +15,7 @@ import io.reactivex.Observable
 class FindPresenter(context: Context, view: FindContract.View) : FindContract.Preenter {
     var mContext: Context? = null
     var mView: FindContract.View? = null
-    val mModel: FindModel by lazy {
+    private val mModel: FindModel by lazy {
         FindModel()
     }
 
@@ -28,6 +29,7 @@ class FindPresenter(context: Context, view: FindContract.View) : FindContract.Pr
         requetData()
     }
 
+    @SuppressLint("CheckResult")
     override fun requetData() {
         val observable: Observable<MutableList<FindBean>>? = mContext?.let {
             mModel.loadata(mContext!!)

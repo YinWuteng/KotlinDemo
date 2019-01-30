@@ -5,11 +5,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.kotlindemo"
         minSdkVersion 16
-        targetSdkVersion 25
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -41,7 +41,7 @@ dependencies {
     //引入rxjava
     implementation 'io.reactivex.rxjava2:rxjava:2.0.4'
     //引入Log拦截器，方便DEBUG模式输出log信息
-    compile 'com.squareup.okhttp3:logging-interceptor:3.5.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'
     //引入rxjava适配器，方便rxjava与retrofit的结合
     implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
     //引入json转换器，方便将返回的数据转换为json格式

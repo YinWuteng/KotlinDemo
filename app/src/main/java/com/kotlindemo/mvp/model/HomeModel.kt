@@ -14,9 +14,9 @@ class HomeModel {
     fun loadData(context: Context, isFirst: Boolean, data: String?): Observable<HomeBean>? {
         val  retrofitClient=RetrofitClient.getInstance(context,ApiService.BASE_URL)
         val apiService=retrofitClient.create(ApiService::class.java)
-        when(isFirst){
-            true-> return apiService?.getHomeData()
-            false-> return apiService?.getHomeMoreData(data.toString(),"2")
+        return when(isFirst){
+            true-> apiService?.getHomeData()
+            false-> apiService?.getHomeMoreData(data.toString(),"2")
         }
     }
 }

@@ -5,7 +5,6 @@ import android.util.Log
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import okhttp3.Cache
 import okhttp3.OkHttpClient
-import okhttp3.internal.cache.CacheInterceptor
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -17,12 +16,12 @@ import java.util.concurrent.TimeUnit
  * 2018/7/20.
  */
 class RetrofitClient private constructor(context: Context, baseUrl: String) {
-    var httpCacheDirectory: File? = null
-    val mContext: Context = context
-    var cache: Cache? = null
-    var okhttpClient: OkHttpClient? = null
-    var retrofit: Retrofit? = null
-    val DEFAULT_TIMEOUT: Long = 20
+    private var httpCacheDirectory: File? = null
+    private val mContext: Context = context
+    private var cache: Cache? = null
+    private var okhttpClient: OkHttpClient? = null
+    private var retrofit: Retrofit? = null
+    private val DEFAULT_TIMEOUT: Long = 20
     val url = baseUrl
 
     init {
@@ -72,8 +71,8 @@ class RetrofitClient private constructor(context: Context, baseUrl: String) {
         }
     }
 
-    fun <T> create(service: Class<T>?):T?{
-        if (service==null){
+    fun <T> create(service: Class<T>?): T? {
+        if (service == null) {
             throw RuntimeException("Api service is null!")
         }
         return retrofit?.create(service)
